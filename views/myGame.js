@@ -175,7 +175,7 @@ $(document).ready(function() {
 
     var doWin = function() {
         var lastBlock = blocks[blocks.length-1];
-        if (playBall.xCoor-playBall.radius > lastBlock.xCoor+10) {
+        if (playBall.xCoor-playBall.radius > lastBlock.xCoor+lastBlock.width+10) {
             return true;
         }
         return false;
@@ -222,7 +222,7 @@ $(document).ready(function() {
         }else if (doLose() == true) {
             gameState = "lose";
             console.log(gameState);
-            writeContext("Fail..Clikc 'Restart' button",width/2-250,height/2,"#000000");
+            writeContext("YOU CAN'T TOUCH IT!",width/2-250,height/2,"#000000");
             return;
         }
         requestAnimationFrame(updateGame);
